@@ -61,7 +61,7 @@ export default function CreateListing() {
       const formData = new FormData();
       formData.append('image', file);
 
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/upload/upload`, {
+      const res = await fetch(`${import.meta.env.API_URL}/api/upload/upload`, {
         method: 'POST',
         body: formData,
       });
@@ -73,7 +73,7 @@ export default function CreateListing() {
       }
 
       // Return full image URL (adjust if deployed)
-      return `${import.meta.env.VITE_API_URL}/${data.path.replace(/\\/g, '/')}`;
+      return `${import.meta.env.API_URL}/${data.path.replace(/\\/g, '/')}`;
     } catch (err) {
       throw err;
     }
